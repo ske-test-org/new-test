@@ -133,8 +133,8 @@ async function labelPullRequestWithSize({
 }
 
 (async () => {
-  const { Octokit } = require("octokit");
-  
+  const { Octokit } = await import("octokit");
+
   // Get the values of environment variables.
   // (These are set by the GitHub Actions workflow that will run this script.)
   const TOKEN = process.env.TOKEN;
