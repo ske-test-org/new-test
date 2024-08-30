@@ -1,6 +1,6 @@
 // This script uses GitHub's Octokit SDK to make API requests.
-import { Octokit } from "octokit";
-// const { Octokit } = require("octokit");
+// import { Octokit } from "octokit";
+
 
 // The size labels and their corresponding maximum number of files and lines.
 // You can modify this object to reflect the size estimates that your team uses.
@@ -133,6 +133,8 @@ async function labelPullRequestWithSize({
 }
 
 (async () => {
+  const { Octokit } = require("octokit");
+  
   // Get the values of environment variables.
   // (These are set by the GitHub Actions workflow that will run this script.)
   const TOKEN = process.env.TOKEN;
